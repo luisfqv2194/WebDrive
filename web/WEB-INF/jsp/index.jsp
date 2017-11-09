@@ -10,11 +10,12 @@
 
     <body>
         
-        <h1>Formulario de búsqueda</h1>
+        <h1>Login</h1>
         
         <form action="ver.htm" method="post">
-            <input type="text" name="txtRut" /> Rut<br /><br />
-            <input type="submit" value="Buscar..." />
+            <input type="text" name="txtUser" /> Username<br /><br />
+            <input type="password" name="txtPassword" /> Password<br /><br />
+            <input type="submit" value="Sign In" />
         </form>
         
     </body>

@@ -21,9 +21,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class VerController {
     
     //siempre los métodos deben retornar String
+    @RequestMapping(method = RequestMethod.GET)
+    public String otroMetodo(Model model) {
+        return "index";
+        
+    }
    
     @RequestMapping(method = RequestMethod.POST)
-    public String recibir(@RequestParam("txtRut") String rut, Model model){
+    public String recibir(@RequestParam("txtUser") String rut, Model model){
         if (rut.trim().equals("")) {
             String a = "no escribio nada";
             model.addAttribute("err",a);
