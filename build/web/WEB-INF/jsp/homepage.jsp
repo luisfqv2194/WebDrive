@@ -12,9 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Welcome back, ${username}</h1>
-        <form action="home.htm" method="post" >
-            <button name="username" >${username}${var1}</button>
+        <h1>Get me a beer!</h1>
+        <form action="home.htm" method="post">
+            <button>${username}</button>
             
         </form>
         
