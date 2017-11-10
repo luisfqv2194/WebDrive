@@ -1,6 +1,6 @@
 <%-- 
-    Document   : error
-    Created on : Nov 9, 2017, 11:01:31 AM
+    Document   : homepage
+    Created on : Nov 9, 2017, 12:31:27 PM
     Author     : XPC
 --%>
 
@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Error!</h1>
+        <h1>Get me a beer!</h1>
+        <form action="home.htm" method="post">
+            <button>${username}</button>
+            
+        </form>
+        
     </body>
 </html>

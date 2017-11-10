@@ -12,11 +12,12 @@
         
         <h1>Login</h1>
         
-        <form action="ver.htm" method="post">
-            <input type="text" name="txtUser" /> Username<br /><br />
+        <form action="login.htm" method="post">
+            <input type="text" name="txtUsername" /> Username<br /><br />
             <input type="password" name="txtPassword" /> Password<br /><br />
             <input type="submit" value="Sign In" />
         </form>
+        <h3 style="color: #ff0033" >${err}</h3>
         
     </body>
 </html>
