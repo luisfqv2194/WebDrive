@@ -7,20 +7,21 @@ package controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 /**
  *
  * @author XPC
  */
 @Controller
-
 public class HomePageController {
     
-    @RequestMapping(value = "/home", method = {RequestMethod.GET, RequestMethod.POST})
-    public String lala (Model model) {
-        model.addAttribute("username","Otro");
+    @RequestMapping(value = "/home", method = {RequestMethod.POST, RequestMethod.GET})
+    public String lala (String username, Model model) {
+        model.addAttribute("var1",username);
         return "homepage";
     }
 }
