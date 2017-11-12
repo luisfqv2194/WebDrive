@@ -13,10 +13,9 @@
     </head>
     <body>
         <h1>Welcome back, ${username}</h1>
-        <form action="home.htm" method="post">
-            <button>lala ${var1}</button>
-            
-        </form>
+        
+            <button onclick="location.href='home.htm'" >lala ${var1}</button>
+       
         
     </body>
 </html>

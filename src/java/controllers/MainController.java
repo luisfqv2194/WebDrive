@@ -24,7 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
     
     public User usuario;
-    
+    public boolean readJSON = false;
     
     //siempre los métodos deben retornar String
     @RequestMapping(method = RequestMethod.GET)
@@ -56,11 +56,17 @@ public class MainController {
     
     @RequestMapping(value = "/home", method = {RequestMethod.GET, RequestMethod.POST})
     public String lala ( Model model) {
-        model.addAttribute("var1",usuario.getUsername());
+        model.addAttribute("var1",usuario.getSpace());
         model.addAttribute("username",usuario.getUsername());
+        if(readJSON) {
+            this.usuario.createDrive();
+        }
+        else {
+            readJSON = true;
+        }
+        
         return "homepage";
     }
     
-    
-    
+        
 }

@@ -17,12 +17,30 @@ public class User {
     
     private String username;
     private String password;
+    private long space;
+    private Folder myDrive;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
+    public User(String username, String password, long space) {
+        this.username = username;
+        this.password = password;
+        this.space = space;
+        this.createDrive();
+    }
+
+    public long getSpace() {
+        return space;
+    }
+
+    public void setSpace(long space) {
+        this.space = space;
+    }
+    
+    
     public String getUsername() {
         return username;
     }
@@ -40,8 +58,25 @@ public class User {
     }
     
     public boolean validateUser() {
-        JSON_User jsonUser = new JSON_User(this.username,this.password);
-        return jsonUser.readUserJSON();
+        JSON_Handler jsonUser = new JSON_Handler(this.username,this.password);
+        User user = jsonUser.readUserJSON();
+        if(user != null){
+            this.username = user.username;
+            this.password = user.password;
+            this.space = user.space;
+            return true;
+        }
+        else {
+            return false;
+        }
+        
+    }
+    
+    public void createDrive() {
+        this.myDrive = new Folder(new Folder("Drive", this.username),"Drive", this.username);
+        this.myDrive.addFolder("Shared");
+        JSON_Handler handler = new JSON_Handler();
+        handler.writeNewFolderJson(myDrive);
     }
     
 }
