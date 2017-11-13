@@ -37,7 +37,7 @@ public class MainController {
     public String recibir(@RequestParam("txtUsername") String username, 
             @RequestParam("txtPassword") String password, Model model){
         this.usuario = new User(username, password);
-        if (username.trim().equals("") || password.trim().equals("")) {
+        if (username.isEmpty() || password.isEmpty()) {
             String a = "Los campos no pueden estar vacios!";
             model.addAttribute("err",a);
             return "index";
